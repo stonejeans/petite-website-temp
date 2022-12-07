@@ -1,0 +1,943 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+  background: #fff;
+}
+
+#page {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.offcanvas #page {
+  overflow: hidden;
+  position: absolute;
+}
+
+.offcanvas #page:after {
+  -webkit-transition: 2s;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  background: rgba(0, 0, 0, 0.7);
+  content: "";
+}
+
+a {
+  color: #678983;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover, a:active, a:focus {
+  color: #678983;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, figure {
+  color: #000;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+::-webkit-selection {
+  color: #fff;
+  background: #678983;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #678983;
+}
+
+::selection {
+  color: #fff;
+  background: #678983;
+}
+
+#petsol-title,
+#petsol-services,
+#petsol-comparison,
+#petsol-contact,
+#petsol-footer {
+  padding: 7em 0;
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  #petsol-title,
+  #petsol-services,
+  #petsol-comparison,
+  #petsol-contact,
+  #petsol-footer {
+    padding: 3em 0;
+  }
+}
+
+.petsol-nav {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 40px 0;
+  z-index: 1001;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-nav {
+    padding: 20px 0;
+  }
+}
+
+.petsol-nav #petsol-logo {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-family: "Roboto", Arial, serif;
+}
+
+.petsol-nav a {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-nav .menu-1, .petsol-nav .menu-2 {
+    display: none;
+  }
+}
+
+.petsol-nav ul {
+  padding: 0;
+  margin: 2px 0 0 0;
+}
+
+.petsol-nav ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+
+.petsol-nav ul li a {
+  font-size: 14px;
+  padding: 30px 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.petsol-nav ul li a:hover, .petsol-nav ul li a:focus, .petsol-nav ul li a:active {
+  color: white;
+}
+
+.petsol-nav ul li.has-dropdown {
+  position: relative;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown {
+  width: 130px;
+  -webkit-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
+  z-index: 1002;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown:before {
+  bottom: 100%;
+  left: 40px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown li {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown li:last-child {
+  margin-bottom: 0;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown li a {
+  padding: 2px 0;
+  display: block;
+  color: #999999;
+  line-height: 1.2;
+  text-transform: none;
+  font-size: 15px;
+}
+
+.petsol-nav ul li.has-dropdown .dropdown li a:hover {
+  color: #000;
+}
+
+.petsol-nav ul li.has-dropdown:hover a, .petsol-nav ul li.has-dropdown:focus a {
+  color: #fff;
+}
+
+.petsol-nav ul li.active > a {
+  color: #fff !important;
+}
+
+.petsol-nav-toggle {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.petsol-nav-toggle.active i::before, .petsol-nav-toggle.active i::after {
+  background: #444;
+}
+
+.petsol-nav-toggle:hover, .petsol-nav-toggle:focus, .petsol-nav-toggle:active {
+  outline: none;
+  border-bottom: none !important;
+}
+
+.petsol-nav-toggle i {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 2px;
+  color: #252525;
+  font: bold 14px/.4 Helvetica;
+  text-transform: uppercase;
+  text-indent: -55px;
+  background: #252525;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.petsol-nav-toggle i::before, .petsol-nav-toggle i::after {
+  content: '';
+  width: 25px;
+  height: 2px;
+  background: #252525;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.petsol-nav-toggle.petsol-nav-white > i {
+  color: #fff;
+  background: #fff;
+}
+
+.petsol-nav-toggle.petsol-nav-white > i::before, .petsol-nav-toggle.petsol-nav-white > i::after {
+  background: #fff;
+}
+
+.petsol-nav-toggle i::before {
+  top: -7px;
+}
+
+.petsol-nav-toggle i::after {
+  bottom: -7px;
+}
+
+.petsol-nav-toggle:hover i::before {
+  top: -10px;
+}
+
+.petsol-nav-toggle:hover i::after {
+  bottom: -10px;
+}
+
+.petsol-nav-toggle.active i {
+  background: transparent;
+}
+
+.petsol-nav-toggle.active i::before {
+  top: 0;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.petsol-nav-toggle.active i::after {
+  bottom: 0;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.petsol-nav-toggle {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  z-index: 21;
+  padding: 6px 0 0 0;
+  display: block;
+  margin: 0 auto;
+  display: none;
+  height: 44px;
+  width: 44px;
+  z-index: 2001;
+  border-bottom: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-nav-toggle {
+    display: block;
+  }
+}
+
+#petsol-offcanvas {
+  position: absolute;
+  z-index: 1901;
+  width: 270px;
+  background: black;
+  top: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 45px 40px 40px 40px;
+  overflow-y: auto;
+  -webkit-transform: translateX(270px);
+  transform: translateX(270px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.offcanvas #petsol-offcanvas {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+#petsol-offcanvas a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#petsol-offcanvas a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#petsol-offcanvas ul {
+  padding: 0;
+  margin: 0;
+}
+
+#petsol-offcanvas ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#petsol-offcanvas ul li > ul {
+  padding-left: 20px;
+  display: none;
+}
+
+#petsol-offcanvas ul li.offcanvas-has-dropdown > a {
+  display: block;
+  position: relative;
+}
+
+#petsol-offcanvas ul li.offcanvas-has-dropdown > a:after {
+  position: absolute;
+  right: 0px;
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e921";
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#petsol-offcanvas ul li.offcanvas-has-dropdown.active a:after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.btn {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 8px 20px;
+}
+
+.btn.btn-md {
+  padding: 8px 20px !important;
+}
+
+.btn.btn-lg {
+  padding: 18px 36px !important;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+}
+
+.petsol-heading {
+  margin-bottom: 5em;
+}
+
+.petsol-heading.petsol-heading-sm {
+  margin-bottom: 2em;
+}
+
+.petsol-heading h2 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #678983;
+  font-family: "Roboto", Arial, serif;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-heading h2 {
+    font-size: 40px;
+  }
+}
+
+.petsol-heading p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #828282;
+}
+
+.petsol-heading span {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.landing-title {
+  font-family: "La Belle Aurore", Arial, sans-serif !important;
+}
+
+.petsol-cover {
+  height: 900px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+}
+
+.petsol-cover .overlay {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.petsol-cover > .petsol-container {
+  position: relative;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-cover {
+    height: 600px;
+  }
+}
+
+.petsol-cover .display-t,
+.petsol-cover .display-tc {
+  height: 900px;
+  display: table;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-cover .display-t,
+  .petsol-cover .display-tc {
+    height: 600px;
+  }
+}
+
+.petsol-cover.petsol-cover-sm {
+  height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-cover.petsol-cover-sm {
+    height: 400px;
+  }
+}
+
+.petsol-cover.petsol-cover-sm .display-t,
+.petsol-cover.petsol-cover-sm .display-tc {
+  height: 600px;
+  display: table;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .petsol-cover.petsol-cover-sm .display-t,
+  .petsol-cover.petsol-cover-sm .display-tc {
+    height: 400px;
+  }
+}
+
+#petsol-landing .display-tc,
+.petsol-cover .display-tc {
+  display: table-cell !important;
+  vertical-align: middle;
+}
+
+#petsol-landing .display-tc h1, #petsol-landing .display-tc h2,
+.petsol-cover .display-tc h1,
+.petsol-cover .display-tc h2 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#petsol-landing .display-tc h1,
+.petsol-cover .display-tc h1 {
+  margin-bottom: 0px;
+  font-size: 100px;
+  line-height: 1.5;
+  font-family: "Roboto", Arial, serif;
+}
+
+@media screen and (max-width: 768px) {
+  #petsol-landing .display-tc h1,
+  .petsol-cover .display-tc h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #petsol-landing .display-tc h1,
+  .petsol-cover .display-tc h1 {
+    font-size: 30px;
+  }
+}
+
+#petsol-landing .display-tc h2,
+.petsol-cover .display-tc h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  #petsol-landing .display-tc h2,
+  .petsol-cover .display-tc h2 {
+    font-size: 16px;
+  }
+}
+
+#petsol-landing .display-tc .btn,
+.petsol-cover .display-tc .btn {
+  padding: 15px 20px;
+  background: #fff !important;
+  color: #dfc245;
+  border: none !important;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#petsol-landing .display-tc .btn:hover,
+.petsol-cover .display-tc .btn:hover {
+  background: #fff !important;
+  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+}
+
+.title-wrap {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .title-wrap {
+    width: 100%;
+  }
+}
+
+#petsol-services,
+.petsol-bg {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.petsol-bg {
+  background-position: center center;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+#petsol-services {
+  height: 950px;
+  float: left;
+}
+
+#petsol-services .display-t,
+#petsol-services .display-tc {
+  height: 700px;
+  display: table;
+  width: 100%;
+}
+
+#petsol-services .petsol-heading h2 {
+  color: #fff;
+}
+
+#petsol-services .petsol-heading span {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+#petsol-services .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  #petsol-services {
+    height: inherit;
+    padding: 7em 0;
+  }
+  #petsol-services .display-t,
+  #petsol-services .display-tc {
+    height: inherit;
+  }
+}
+
+#petsol-services .service-wrap {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  width: 100%;
+  float: left;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  #petsol-services .service-wrap {
+    margin-bottom: 10px;
+  }
+}
+
+#petsol-services .service-wrap h3 {
+  font-size: 20px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: block;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#petsol-services .service-wrap p, #petsol-services .service-wrap span {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#petsol-services .service-wrap i {
+  color: white;
+  font-size: 20px;
+}
+
+#petsol-services .service-wrap .event-col {
+  width: 50%;
+  float: left;
+  margin-bottom: 30px;
+}
+
+#petsol-services .left-box, #petsol-services .right-box {
+  background: rgba(68, 68, 68, 0.5);
+}
+
+.left-table-heading {
+  color: #678983;
+}
+
+.filter-green {
+  -webkit-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+          filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+.filter-orange {
+  -webkit-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(20deg) brightness(118%) contrast(119%);
+          filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(20deg) brightness(118%) contrast(119%);
+}
+
+#petsol-contact {
+  position: relative;
+}
+
+#petsol-contact .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#petsol-contact .petsol-heading h2 {
+  color: #fff;
+}
+
+#petsol-contact .petsol-heading p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#petsol-contact .form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none !important;
+  color: #fff;
+  font-size: 16px !important;
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#petsol-contact .form-control::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#petsol-contact .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
+
+#petsol-contact .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+
+#petsol-contact .form-control:-ms-input-placeholder {
+  color: #fff;
+}
+
+#petsol-contact .form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#petsol-contact .btn {
+  height: 54px;
+  border: none !important;
+  background: #678983;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#petsol-contact .form-inline .form-group {
+  width: 100% !important;
+  margin-bottom: 10px;
+}
+
+#petsol-contact .form-inline .form-group .form-control {
+  width: 100%;
+}
+
+#petsol-contact .petsol-heading {
+  margin-bottom: 30px;
+}
+
+#petsol-contact .petsol-heading h2 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #petsol-footer .copyright .pull-left,
+  #petsol-footer .copyright .pull-right {
+    float: none !important;
+    text-align: center;
+  }
+}
+
+#petsol-footer .copyright .block {
+  display: block;
+}
+
+.uppercase {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gototop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.gototop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gototop a {
+  width: 50px;
+  height: 50px;
+  display: table;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.gototop a i {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.gototop a:hover, .gototop a:active, .gototop a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+form label {
+  font-weight: normal !important;
+}
+
+.form-control {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 54px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.form-control:active, .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #678983;
+}
+
+.row-pb-md {
+  padding-bottom: 4em !important;
+}
+
+.row-pb-sm {
+  padding-bottom: 2em !important;
+}
+
+.petsol-loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../images/loader.gif) center no-repeat #fff;
+}
+
+.petsol-social-icons {
+  margin: 0;
+  padding: 0;
+}
+
+.petsol-social-icons li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.petsol-social-icons li a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  color: #678983;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.petsol-social-icons li a i {
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */
